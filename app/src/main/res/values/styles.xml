@@ -10,7 +10,7 @@
 
     <style name="AppTheme.tran" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#00000000</item>
+        <item name="colorPrimary">#ffffff</item>
 
     </style>
 

@@ -23,6 +23,7 @@ public class MainActivity extends PBaseActivity implements BottomNavigationBar.O
 
     @Override
     protected int getContentViewID() {
+
         return R.layout.activity_main;
     }
 

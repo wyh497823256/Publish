@@ -1,11 +1,11 @@
 package com.h.publish;
 
 import android.os.Bundle;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
 
+import com.blankj.utilcode.utils.BarUtils;
 import com.h.publish.base.PBaseFragment;
 
 import java.util.ArrayList;
@@ -25,8 +25,8 @@ public class HomeFragment extends PBaseFragment {
 
     private HomeAdapter mHomeAdapter;
 
-    @BindView(R.id.swipe_refresh)
-    SwipeRefreshLayout swipe_refresh;
+//    @BindView(R.id.swipe_refresh)
+//    SwipeRefreshLayout swipe_refresh;
 
 
 //    @BindView(R.id.common_list_refresh)
@@ -44,6 +44,8 @@ public class HomeFragment extends PBaseFragment {
     }
 
     protected void initRecyclerView() {
+        BarUtils.setTranslucentForImageViewInFragment(getActivity(),20,common_list_recycler_view);
+
 //        SinaRefreshView sinaRefreshView = new SinaRefreshView(getContext());
 //        sinaRefreshView.setArrowResource(R.drawable.ic_arrow);
 //        common_list_refresh.setHeaderView(sinaRefreshView);
@@ -53,7 +55,7 @@ public class HomeFragment extends PBaseFragment {
 
 
         common_list_recycler_view.setLayoutManager(new LinearLayoutManager(getContext()));
-        swipe_refresh.setProgressViewOffset(false, 0, 50);
+//        swipe_refresh.setProgressViewOffset(false, 0, 50);
     }
 
 

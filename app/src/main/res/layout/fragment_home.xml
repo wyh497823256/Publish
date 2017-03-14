@@ -4,27 +4,26 @@
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/tools"
     style="@style/MatchMatch">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
-        app:layout_behavior="com.h.publish.behavior.AppBarLayoutOverScrollViewBehavior"
         style="@style/MatchWrap">
 
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             app:contentScrim="?attr/colorPrimary"
-            app:expandedTitleMarginEnd="64dp"
-            app:expandedTitleMarginStart="48dp"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+            app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed|snap"
+            app:statusBarScrim="@color/primary">
 
 
             <FrameLayout
                 android:id="@+id/main_fl_title"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center_horizontal"
                 android:background="@color/primary"
                 app:layout_collapseMode="parallax">
@@ -32,41 +31,21 @@
                 <ImageView
                     android:id="@+id/main_iv_placeholder"
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
+                    android:layout_height="wrap_content"
                     android:scaleType="centerCrop"
                     android:src="@drawable/a87"/>
 
-                <RelativeLayout
-                    android:id="@+id/main_ll_title_container"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="20dp"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/image"
-                        app:border_color="@android:color/white"
-                        app:border_width="2dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="4dp"
-                        android:text="p"
-                        android:textColor="@android:color/white"/>
-                </RelativeLayout>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/fragment_home_image_header"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/image"
+                    app:border_color="@android:color/white"
+                    app:border_width="1dp"/>
             </FrameLayout>
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
@@ -76,17 +55,37 @@
         app:isFirstVisible="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <android.support.v4.widget.SwipeRefreshLayout
-            android:id="@+id/swipe_refresh"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <!--<android.support.v4.widget.SwipeRefreshLayout-->
+        <!--android:id="@+id/swipe_refresh"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/common_list_recycler_view"
-                style="@style/MatchMatch"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/common_list_recycler_view"
+            style="@style/MatchMatch"/>
 
-        </android.support.v4.widget.SwipeRefreshLayout>
+        <!--</android.support.v4.widget.SwipeRefreshLayout>-->
     </com.h.appui.loading.LoadingLayout>
+
+     
+
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="20dp"
+        android:src="@drawable/fab_add"
+        app:fab_colorNormal="@color/primary"
+        app:fab_colorPressed="@color/primary_dark"
+        app:fab_colorRipple="@color/secondary_text"
+        app:fab_label="说说"
+        app:fab_size="normal"
+        app:layout_behavior="com.h.publish.behavior.FabBehavior"
+        />
+
+
 </android.support.design.widget.CoordinatorLayout>
 
 
